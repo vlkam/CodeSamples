@@ -21,17 +21,17 @@ class Throbber
     private var radius2 = 0f
     private var radius3 = 0f
 
-    private val RotatePerSecond1 = 0.5f
-    private val RotatePerSecond2 = 0.7f
-    private val RotatePerSecond3 = 0.9f
+    private val rotatePerSecond1 = 0.5f
+    private val rotatePerSecond2 = 0.7f
+    private val rotatePerSecond3 = 0.9f
 
     private var timer: Timer? = null
     private val fps = 60
     private val timerTickPeriodInMilliseconds = 1000L / fps
 
-    private val rotatePerTick1 = 360f / fps * RotatePerSecond1
-    private val rotatePerTick2 = 360f / fps * RotatePerSecond2
-    private val rotatePerTick3 = 360f / fps * RotatePerSecond3
+    private val rotatePerTick1 = 360f / fps * rotatePerSecond1
+    private val rotatePerTick2 = 360f / fps * rotatePerSecond2
+    private val rotatePerTick3 = 360f / fps * rotatePerSecond3
 
     private var currentDegree1 = 0f
     private var currentDegree2 = 120f
