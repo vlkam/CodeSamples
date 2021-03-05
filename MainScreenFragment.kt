@@ -30,25 +30,17 @@ class MainScreenFragment : AbstractFragment<MainScreenViewModel, FragmentMainScr
         }
 
         // Header
-        val adsDescriptor = Constructor.buildControl(this, viewModel.ads)
-        binding.headerBody.addView(adsDescriptor, MATCH_PARENT, WRAP_CONTENT)
+        val adsView = Constructor.buildControl(this, viewModel.ads)
+        binding.headerBody.addView(adsView, MATCH_PARENT, WRAP_CONTENT)
 
         // Body
-        val mainMenuDescriptor = Constructor.buildControl(this, viewModel.mainMenuTree)
-        binding.body.addView(mainMenuDescriptor, MATCH_PARENT, MATCH_PARENT)
+        val mainMenuView = Constructor.buildControl(this, viewModel.mainMenuTree)
+        binding.body.addView(mainMenuView, MATCH_PARENT, MATCH_PARENT)
 
         val motionLayout = mainView as MotionLayout
         motionLayout.enableStateSaving(this)
 
         return mainView
     }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-        setStatusBarColor(AppColors.PRIMARY_COLOR_DARK_ACCENT, lightStatusBarIcons = true)
-
-    }
-
 }
 
